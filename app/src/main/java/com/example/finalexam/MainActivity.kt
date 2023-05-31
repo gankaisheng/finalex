@@ -2,6 +2,8 @@ package com.example.finalexam
 
 import android.media.Image
 import android.os.Bundle
+import android.view.View.X
+import android.view.View.Y
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.core.animateIntOffsetAsState
@@ -18,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.res.painterResource
@@ -26,6 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.finalexam.ui.theme.顔愷升Theme
+import java.nio.file.Files.size
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,17 +55,26 @@ fun Greeting(name: String) {
         Text(text = "$name", textAlign = TextAlign.Center,)
     }
 
-    Column() {
+    Box() {
 
             Image(
 
                 painter = painterResource(id = R.drawable.map),
 
-                contentDescription = "map2",
+                contentDescription = "map",
 
                 alpha = 1.0f,
 
                 modifier = Modifier)
+
+        Canvas(modifier = Modifier){
+
+                drawRect(Color.Blue,  Offset(670f, 100f), Size(25F, 25F))
+                drawRect(Color.Blue,  Offset(1490f, 810f), Size(25F, 25F))
+
+
+
+        }
 
 
     }
