@@ -4,6 +4,8 @@ import android.media.Image
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.animateIntOffsetAsState
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,7 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.style.TextAlign
@@ -43,13 +47,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Column(){
+    Column() {
+        Text(text = "$name", textAlign = TextAlign.Center,)
+    }
 
-        Text(text = "$name",textAlign = TextAlign.Center, )
+    Column() {
 
-
-
-        Row() {
             Image(
 
                 painter = painterResource(id = R.drawable.map),
@@ -58,11 +61,11 @@ fun Greeting(name: String) {
 
                 alpha = 1.0f,
 
-                modifier = Modifier
+                modifier = Modifier)
 
-            )
-        }
+
     }
+
 }
 
 @Preview(showBackground = true)
