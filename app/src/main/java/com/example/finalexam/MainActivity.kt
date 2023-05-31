@@ -54,7 +54,7 @@ fun Greeting(name: String) {
 
                 painter = painterResource(id = R.drawable.map),
 
-                contentDescription = "map",
+                contentDescription = "map2",
 
                 alpha = 1.0f,
 
